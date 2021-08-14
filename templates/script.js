@@ -1,11 +1,24 @@
 // James Landreth
 // CS-361
-// 
+// Script to do all the calculations and enter them into a table.
 
-// calc length
 
+// Create master table
 var table = document.getElementById("master_table")
 
+// Add results to the table
+function add_row(from, to, result) {
+    var row = table.insertRow()
+    var return_table_cell1 = row.insertCell(0)
+    var return_table_cell2 = row.insertCell(1)
+    var return_table_cell3 = row.insertCell(2)
+
+    return_table_cell1.innerHTML = from
+    return_table_cell2.innerHTML = to
+    return_table_cell3.innerHTML = result
+}
+
+// This function calculates length conversions
 let length = [[1, 0.539957, 0.539957], [1.852, 1, 1852], [0.001, 0.000539957, 1]]
 document.getElementById('generate_length').addEventListener('click', function (event) {
     var conversio = document.getElementById('from').value
@@ -14,10 +27,7 @@ document.getElementById('generate_length').addEventListener('click', function (e
     var to_text = null
     var to_length = document.getElementById('to_select').value
     var results = conversio * length[from_length][to_length]
-    var row = table.insertRow()
-    var cell1 = row.insertCell(0)
-    var cell2 = row.insertCell(1)
-    var cell3 = row.insertCell(2)
+
     if (from_length == 0) {
         from_text = 'km'
     } else if (from_length == 1) {
@@ -32,14 +42,11 @@ document.getElementById('generate_length').addEventListener('click', function (e
     } else {
         to_text = 'm'
     }
-    cell1.innerHTML = from_text
-    cell2.innerHTML = to_text
-    cell3.innerHTML = results
+    add_row(from_text, to_text, results)
     event.preventDefault()
 });
 
-// calc mass 
-
+//This function is going to calc mass changes
 let mass = [[1, 2.20462, 35.274], [0.453592, 1, 16], [0.0283495, 0.0625, 1]]
 document.getElementById('generate_mass').addEventListener('click', function (event) {
     var conversio = document.getElementById('from_mass').value
@@ -48,10 +55,6 @@ document.getElementById('generate_mass').addEventListener('click', function (eve
     var to_text = null
     var to_mass = document.getElementById('to_mass_select').value
     var results = conversio * length[from_mass][to_mass]
-    var row = table.insertRow()
-    var cell1 = row.insertCell(0)
-    var cell2 = row.insertCell(1)
-    var cell3 = row.insertCell(2)
     if (from_mass == 0) {
         from_text = 'kg'
     } else if (from_mass == 1) {
@@ -66,14 +69,12 @@ document.getElementById('generate_mass').addEventListener('click', function (eve
     } else {
         to_text = 'oc'
     }
-    cell1.innerHTML = from_text
-    cell2.innerHTML = to_text
-    cell3.innerHTML = results
+    add_row(from_text, to_text, results)
     event.preventDefault()
 });
 
-// Speed conversion
 
+// Speed conversion
 let speed = [[1, 0.51444444, 1.15078], [1.94384, 1, 2.23694], [0.868976, 0.44704, 1]]
 document.getElementById('generate_speed').addEventListener('click', function (event) {
     var conversio = document.getElementById('from_speed').value
@@ -82,10 +83,6 @@ document.getElementById('generate_speed').addEventListener('click', function (ev
     var to_text = null
     var to_speed = document.getElementById('to_speed_select').value
     var results = conversio * length[from_speed][to_speed]
-    var row = table.insertRow()
-    var cell1 = row.insertCell(0)
-    var cell2 = row.insertCell(1)
-    var cell3 = row.insertCell(2)
     if (from_speed == 0) {
         from_text = 'kts'
     } else if (from_speed == 1) {
@@ -100,14 +97,12 @@ document.getElementById('generate_speed').addEventListener('click', function (ev
     } else {
         to_text = 'mph'
     }
-    cell1.innerHTML = from_text
-    cell2.innerHTML = to_text
-    cell3.innerHTML = results
+    add_row(from_text, to_text, results)
+
     event.preventDefault()
 });
 
 //Geolocation conversion
-
 document.getElementById('generate_dms').addEventListener('click', function (event) {
     var latdegrees = Number(document.getElementById('lat_degrees').value)
     var latminutes = Number(document.getElementById('lat_minutes').value)
@@ -117,14 +112,7 @@ document.getElementById('generate_dms').addEventListener('click', function (even
     var longminutes = Number(document.getElementById('long_minutes').value)
     var longseconds = Number(document.getElementById('long_seconds').value)
     var long_results = (longdegrees + ((longminutes / 60) + (longseconds / 3600)))
-    var row = table.insertRow()
-    var cell1 = row.insertCell(0)
-    var cell2 = row.insertCell(1)
-    var cell3 = row.insertCell(2)
-
-    cell1.innerHTML = 'DMS'
-    cell2.innerHTML = 'DD'
-    cell3.innerHTML = 'Lat: ' + lat_results + ' / ' + 'Long: ' + long_results
+    add_row('DMS', 'DD', 'Lat: ' + lat_results + ' / ' + 'Long: ' + long_results)
 
     event.preventDefault()
 });

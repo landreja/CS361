@@ -7,9 +7,12 @@
   <link rel="stylesheet" href="style.css" type="text/css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script type="text/javascript" src="images.json"></script>
+
 </head>
 
 <body>
+
   <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">
@@ -21,166 +24,171 @@
       <br>
     </div>
   </nav>
-</body>
-<p>Click to refresh</p>
-<h1> Try all the conversions!
-</h1>
-<h2> </h2>
-<nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
-      role="tab" aria-controls="nav-home" aria-selected="true">Length</button>
-    <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button"
-      role="tab" aria-controls="nav-profile" aria-selected="false">Mass</button>
-    <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
-      role="tab" aria-controls="nav-contact" aria-selected="false">Speed</button>
-    <button class="nav-link" id="nav-geo-tab" data-bs-toggle="tab" data-bs-target="#nav-geo" type="button" role="tab"
-      aria-controls="nav-geo" aria-selected="false">Geolocation</button>
+  <p>Click to refresh</p>
+  <h1> Try all the conversions!
+  </h1>
+  <h2> </h2>
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button"
+        role="tab" aria-controls="nav-home" aria-selected="true">Length</button>
+      <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button"
+        role="tab" aria-controls="nav-profile" aria-selected="false">Mass</button>
+      <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button"
+        role="tab" aria-controls="nav-contact" aria-selected="false">Speed</button>
+      <button class="nav-link" id="nav-geo-tab" data-bs-toggle="tab" data-bs-target="#nav-geo" type="button" role="tab"
+        aria-controls="nav-geo" aria-selected="false">Geolocation</button>
 
-  </div>
-</nav>
-<div class="tab-content" id="nav-tabContent" style="width: 85%;">
-  <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-    <div class="row g-3">
-      <form>
-        <div>Length Conversion</div>
-        <div class="row g-3">
-          <div class="col">
-            <input id="from" type="number" class="form-control" placeholder="Convert From" aria-label="First name">
-            <select id="from_select" class="form-select" multiple aria-label="multiple select example">
-              <option value="0" selected>Kilometers (km)</option>
-              <option value="1">Nautical Miles (nm)</option>
-              <option value="2">Meters (m)</option>
-            </select>
-          </div>
-
-          <div class="col">
-            <input id="to" type="number" class="form-control" placeholder="Convert To" aria-label="Last name" disabled>
-            <select id="to_select" class="form-select" multiple aria-label="multiple select example">
-              <option value="0">Kilometers (km)</option>
-              <option value="1" selected>Nautical Miles (nm)</option>
-              <option value="2">Meters (m)</option>
-            </select>
-          </div>
-        </div>
-        <button id="generate_length" type="submit" class="btn btn-primary">Calculate</button>
-
-      </form>
     </div>
-  </div>
-
-  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-    <div class="row g-3">
-      <form>
-        <div>Mass Conversion</div>
-        <div class="row g-3">
-          <div class="col">
-            <input id="from_mass" type="number" class="form-control" placeholder="Convert From"
-              aria-label="From Conversion">
-            <select id="from_mass_select" class="form-select" multiple aria-label="multiple select example">
-              <option value="0" selected>Kilogram (kg)</option>
-              <option value="1">Pound (lb)</option>
-              <option value="2">Ounce (oc)</option>
-            </select>
-          </div>
-
-          <div class="col">
-            <input id="to_mass" type="number" class="form-control" placeholder="Convert To" aria-label="Too Conversion"
-              disabled>
-            <select id="to_mass_select" class="form-select" multiple aria-label="multiple select example">
-              <option value="0">Kilogram (kg)</option>
-              <option value="1" selected>Pound (lb)</option>
-              <option value="2">Ounce (oc)</option>
-            </select>
-          </div>
-        </div>
-        <button id="generate_mass" type="submit" class="btn btn-primary">Calculate</button>
-
-      </form>
-    </div>
-  </div>
-
-  <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-    <form>
-      <div>Speed Conversion</div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent" style="width: 85%;">
+    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
       <div class="row g-3">
-        <div class="col">
-          <input id="from_speed" type="number" class="form-control" placeholder="Convert From"
-            aria-label="From Conversion">
-          <select id="from_speed_select" class="form-select" multiple aria-label="multiple select example">
-            <option value="0" selected>Knots (kts)</option>
-            <option value="1">Meters/Second (m/s))</option>
-            <option value="2">Miles per Hour (mph)</option>
-          </select>
-        </div>
+        <form>
+          <div>Length Conversion </div>
 
-        <div class="col">
-          <input id="to_speed" type="number" class="form-control" placeholder="Convert To" aria-label="Too Conversion"
-            disabled>
-          <select id="to_speed_select" class="form-select" multiple aria-label="multiple select example">
-            <option value="0">Knots (kts)</option>
-            <option value="1" selected>Meters/Second (m/s))</option>
-            <option value="2">Miles per Hour (mph)</option>
-          </select>
-        </div>
+          <div class="row g-3">
+            <div class="col">
+              <input id="from" type="number" class="form-control" placeholder="Convert From" aria-label="First name">
+              <select id="from_select" class="form-select" multiple aria-label="multiple select example">
+                <option value="0" selected>Kilometers (km)</option>
+                <option value="1">Nautical Miles (nm)</option>
+                <option value="2">Meters (m)</option>
+              </select>
+            </div>
+
+            <div class="col">
+              <input id="to" type="number" class="form-control" placeholder="Convert To" aria-label="Last name"
+                disabled>
+              <select id="to_select" class="form-select" multiple aria-label="multiple select example">
+                <option value="0">Kilometers (km)</option>
+                <option value="1" selected>Nautical Miles (nm)</option>
+                <option value="2">Meters (m)</option>
+              </select>
+            </div>
+          </div>
+          <div>Select a unit to convert from -> to then enter a number and hit Calculate</div>
+          <button id="generate_length" type="submit" class="btn btn-primary">Calculate</button>
+
+        </form>
       </div>
-      <button id="generate_speed" type="submit" class="btn btn-primary">Calculate</button>
+    </div>
 
-    </form>
-  </div>
-  <div class="tab-pane fade" id="nav-geo" role="tabpanel" aria-labelledby="nav-home-tab">
-    <div class="row g-3">
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+      <div class="row g-3">
+        <form>
+          <div>Mass Conversion</div>
+          <div class="row g-3">
+            <div class="col">
+              <input id="from_mass" type="number" class="form-control" placeholder="Convert From"
+                aria-label="From Conversion">
+              <select id="from_mass_select" class="form-select" multiple aria-label="multiple select example">
+                <option value="0" selected>Kilogram (kg)</option>
+                <option value="1">Pound (lb)</option>
+                <option value="2">Ounce (oc)</option>
+              </select>
+            </div>
+
+            <div class="col">
+              <input id="to_mass" type="number" class="form-control" placeholder="Convert To"
+                aria-label="Too Conversion" disabled>
+              <select id="to_mass_select" class="form-select" multiple aria-label="multiple select example">
+                <option value="0">Kilogram (kg)</option>
+                <option value="1" selected>Pound (lb)</option>
+                <option value="2">Ounce (oc)</option>
+              </select>
+            </div>
+          </div>
+          <button id="generate_mass" type="submit" class="btn btn-primary">Calculate</button>
+
+        </form>
+      </div>
+    </div>
+
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
       <form>
-        <div>Geolocation Conversion</div>
-
+        <div>Speed Conversion</div>
         <div class="row g-3">
-          <p>Latitude</p>
           <div class="col">
+            <input id="from_speed" type="number" class="form-control" placeholder="Convert From"
+              aria-label="From Conversion">
+            <select id="from_speed_select" class="form-select" multiple aria-label="multiple select example">
+              <option value="0" selected>Knots (kts)</option>
+              <option value="1">Meters/Second (m/s))</option>
+              <option value="2">Miles per Hour (mph)</option>
+            </select>
+          </div>
 
-            <input id="lat_degrees" type="number" class="form-control" placeholder="Degrees" aria-label="Degees">
-          </div>
           <div class="col">
-            <input id="lat_minutes" type="number" class="form-control" placeholder="Minutes" aria-label="minutes">
-          </div>
-          <div class="col">
-            <input id="lat_seconds" type="number" class="form-control" placeholder="Seconds" aria-label="seconds">
+            <input id="to_speed" type="number" class="form-control" placeholder="Convert To" aria-label="Too Conversion"
+              disabled>
+            <select id="to_speed_select" class="form-select" multiple aria-label="multiple select example">
+              <option value="0">Knots (kts)</option>
+              <option value="1" selected>Meters/Second (m/s))</option>
+              <option value="2">Miles per Hour (mph)</option>
+            </select>
           </div>
         </div>
-        <div class="row g-3">
-          <p>Longitude</p>
-          <div class="col">
-            <input id="long_degrees" type="number" class="form-control" placeholder="Degrees" aria-label="Degees">
-          </div>
-          <div class="col">
-            <input id="long_minutes" type="number" class="form-control" placeholder="Minutes" aria-label="minutes">
-          </div>
-          <div class="col">
-            <input id="long_seconds" type="number" class="form-control" placeholder="Seconds" aria-label="seconds">
-          </div>
-        </div>
-        <button id="generate_dms" type="submit" class="btn btn-primary">Decimal Degrees</button>
-        <button id="generate_mgrs" type="submit" class="btn btn-primary">MGRS</button>
+        <button id="generate_speed" type="submit" class="btn btn-primary">Calculate</button>
 
       </form>
     </div>
+    <div class="tab-pane fade" id="nav-geo" role="tabpanel" aria-labelledby="nav-home-tab">
+      <div class="row g-3">
+        <form>
+          <div>Geolocation Conversion</div>
+
+          <div class="row g-3">
+            <p>Latitude</p>
+            <div class="col">
+
+              <input id="lat_degrees" type="number" class="form-control" placeholder="Degrees" aria-label="Degees">
+            </div>
+            <div class="col">
+              <input id="lat_minutes" type="number" class="form-control" placeholder="Minutes" aria-label="minutes">
+            </div>
+            <div class="col">
+              <input id="lat_seconds" type="number" class="form-control" placeholder="Seconds" aria-label="seconds">
+            </div>
+          </div>
+          <div class="row g-3">
+            <p>Longitude</p>
+            <div class="col">
+              <input id="long_degrees" type="number" class="form-control" placeholder="Degrees" aria-label="Degees">
+            </div>
+            <div class="col">
+              <input id="long_minutes" type="number" class="form-control" placeholder="Minutes" aria-label="minutes">
+            </div>
+            <div class="col">
+              <input id="long_seconds" type="number" class="form-control" placeholder="Seconds" aria-label="seconds">
+            </div>
+          </div>
+          <button id="generate_dms" type="submit" class="btn btn-primary">Decimal Degrees</button>
+
+        </form>
+      </div>
+    </div>
   </div>
-</div>
 
 
-<br>
-<table id="master_table" class="table" style="width: 85%;">
-  <thead>
-    <tr>
-      <th scope="col">From</th>
-      <th scope="col">To</th>
-      <th scope="col">Results</th>
-    </tr>
-  </thead>
-  <tbody>
+  <br>
+  <table id="master_table" class="table" style="width: 85%;">
+    <thead>
+      <tr>
+        <th scope="col">From</th>
+        <th scope="col">To</th>
+        <th scope="col">Results</th>
+      </tr>
+    </thead>
+    <tbody>
 
 
-  </tbody>
-</table>
+    </tbody>
+  </table>
+
+
+
+</body>
 <script src="script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
